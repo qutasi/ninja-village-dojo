@@ -8,6 +8,7 @@ import org.example.shinobi.NinjaRank;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class NinjaVillage {
@@ -28,7 +29,9 @@ public class NinjaVillage {
         this.missions.add(mission);
     }
 
-    public boolean promoteNinja(Ninja ninja, LocalDate examDate) {}
+    public void promoteNinja(Ninja ninja, LocalDate examDate) {
+        ninja.getPromoted(examDate);
+    }
 
     // Get the number of missions of a given rank currently in progress
     public int getMissionsInProgress(MissionRank missionRank) {
@@ -39,6 +42,10 @@ public class NinjaVillage {
             }
         }
         return missionCount;
+    }
+
+    public Ninja getMostSuccessfulNinjaEver() {
+        return ninjas.stream().max(Comparator.comparingInt(Ninja::getSuccessfulMissionsCount)).orElse(null);
     }
 
 

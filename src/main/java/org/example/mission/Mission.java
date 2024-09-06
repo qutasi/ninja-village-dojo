@@ -20,7 +20,7 @@ public class Mission {
         this.missionRank = missionRank;
         this.numOfNinjaRequired = numOfNinjaRequired;
         this.assignedNinjas = new ArrayList<>();
-        this.missionStatus = missionStatus; //default
+        this.missionStatus = MissionStatus.BACKLOG;
     }
 
     public boolean assignNinjaToMission(Ninja ninja) {
