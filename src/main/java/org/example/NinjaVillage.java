@@ -21,14 +21,6 @@ public class NinjaVillage {
         this.missions = new ArrayList<Mission>();
     }
 
-    public void addNinja(Ninja ninja) {
-        this.ninjas.add(ninja);
-    }
-
-    public void addMission(Mission mission) {
-        this.missions.add(mission);
-    }
-
     public void promoteNinja(Ninja ninja, LocalDate examDate) {
         ninja.getPromoted(examDate);
     }
@@ -48,14 +40,4 @@ public class NinjaVillage {
         return ninjas.stream().max(Comparator.comparingInt(Ninja::getSuccessfulMissionsCount)).orElse(null);
     }
 
-
-
-
-    public List<Ninja> getNinjas() {
-        return ninjas;
-    }
-
-    public List<Mission> getMissions() {
-        return missions;
-    }
 }
